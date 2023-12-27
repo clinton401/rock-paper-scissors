@@ -1,0 +1,97 @@
+.normal {
+    min-height: 100dvh;
+    height: auto;
+    max-height: 900px;
+    max-width: 1600px;
+    width: 100%;
+    overflow-x: hidden;
+    /* background-color: red; */
+    display: flex;
+    padding: 0 5% 30px 5%;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    /* justify-content: center; */
+}
+.aboutRules {
+  width: 100%;
+  /* border: 1px solid red; */
+  margin-top: 50px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 10px;
+}
+.button {
+ --color: rgb(61, 106, 255);
+ padding: 0.8em 1.7em;
+ background-color: transparent;
+ border-radius: .3em;
+ position: relative;
+ overflow: hidden;
+ cursor: pointer;
+ transition: .5s;
+ font-weight: 400;
+ font-size: 17px;
+ border: 1px solid var(--color);
+ font-family: inherit;
+ text-transform: uppercase;
+ /* color: var(--color); */
+ color: #fff;
+ z-index: 1;
+}
+
+.button::before, .button::after {
+ content: '';
+ display: block;
+ width: 50px;
+ height: 50px;
+ transform: translate(-50%, -50%);
+ position: absolute;
+ border-radius: 50%;
+ z-index: -1;
+ background-color: var(--color);
+ transition: 1s ease;
+}
+
+.button::before {
+ top: -1em;
+ left: -1em;
+}
+
+.button::after {
+ left: calc(100% + 1em);
+ top: calc(100% + 1em);
+}
+
+.button:hover::before, .button:hover::after {
+ height: 410px;
+ width: 410px;
+}
+
+.button:hover {
+ color: rgb(10, 25, 30);
+}
+
+.button:active {
+ filter: brightness(.8);
+}
+
+.leftBtn {
+  
+     background-color: transparent;
+     border: 2px solid rgb(61, 106, 255);
+     border-radius: 50%;
+    padding: 0.8em 0.9em;
+    cursor: pointer;
+}
+.left {
+    color: #fff;
+       font-size: 17px;
+}
+@media (max-width: 550px) {
+    .aboutRules {
+        padding-top: 30%;
+        /* align-items: center; */
+    }
+}

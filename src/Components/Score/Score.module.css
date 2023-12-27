@@ -1,0 +1,70 @@
+.score {
+    width: 50%;
+    margin-top: 30px;
+    height: 150px;
+    border: 3px solid var(--Header-Outline);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+
+}
+.score span {
+    background-color: #fff;
+    height: 100px;
+    display: flex;
+    width: 150px;
+    border-radius: 5px;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* padding: 10px 20px; */
+}
+.score h4 {
+    color: var(--Score-Text);
+    font-size: 1..2rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.score h1 {
+    font-size: 3.5rem;
+    color: var(--Dark-Text);
+}
+.restart {
+    position: absolute;
+    top: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--Dark-Text);
+    right: 5px;
+}
+.restart:hover {
+
+      animation: rotate 0.3s ease-in forwards;
+}
+
+@keyframes rotate {
+     from {
+         transform: rotate(0deg);
+     }
+     to { 
+         transform: rotate(-45deg);
+     }
+}
+@media (max-width: 900px) {
+    .score {
+        width: 75%;
+        /* margin: 0 auto; */
+    }
+}
+@media (max-width: 550px) {
+    .score {
+        width: 90%;
+        /* margin: 0 auto; */
+    }
+    .score span {
+        width: 35%;
+    }
+}

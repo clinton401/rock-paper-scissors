@@ -1,0 +1,239 @@
+.home {
+    height: 100dvh;
+    max-height: 900px;
+    width: 100%;
+    max-width: 1600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 600px;
+    padding: 5%;
+    justify-content: center;
+    /* background: linear-gradient(to bottom, hsl(214, 47%, 23%), hsl(237, 49%, 15%));; */
+    /* background-color: var(--background); */
+}
+
+h1 {
+font-size: 3.5rem;
+color: #fff;
+text-align: center;
+}
+h2 {
+    text-align: center;
+    font-size: 3rem;
+      background: linear-gradient(to right, hsl(261, 73%, 60%), hsl(261, 72%, 63%));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+}
+.home > * {
+    margin-bottom: 20px;
+}
+h1 span{
+  font-family: Arial, sans-serif;
+  
+  background: linear-gradient(to right, hsl(230, 89%, 62%) to hsl(230, 89%, 65%));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: colorChange 7s infinite; /* Change the duration or other properties as needed */
+}
+.mode span {
+    font-size: 1rem;
+}
+.mode {
+  position: relative;
+  padding: 20px;
+  width: 450px;
+  border-radius: 7px;
+  border: 1px solid rgb(61, 106, 255);
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 2px;
+  background: transparent;
+
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  overflow: hidden;
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.mode:hover {
+  background: rgb(61, 106, 255);
+  box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815);
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+.mode:hover::before {
+  -webkit-animation: sh02 0.5s 0s linear;
+  -moz-animation: sh02 0.5s 0s linear;
+  animation: sh02 0.5s 0s linear;
+}
+
+.mode::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: #fff;
+  box-shadow: 0 0 50px 30px #fff;
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  -o-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+.mode:active {
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: box-shadow 0.2s ease-in;
+  -moz-transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in;
+}
+.aboutRules {
+  width: 100%;
+  /* border: 1px solid red; */
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+.button {
+ --color: rgb(61, 106, 255);
+ padding: 0.8em 1.7em;
+ background-color: transparent;
+ border-radius: .3em;
+ position: relative;
+ overflow: hidden;
+ cursor: pointer;
+ transition: .5s;
+ font-weight: 400;
+ font-size: 17px;
+ border: 1px solid var(--color);
+ font-family: inherit;
+ text-transform: uppercase;
+ /* color: var(--color); */
+ color: #fff;
+ z-index: 1;
+}
+
+.button::before, .button::after {
+ content: '';
+ display: block;
+ width: 50px;
+ height: 50px;
+ transform: translate(-50%, -50%);
+ position: absolute;
+ border-radius: 50%;
+ z-index: -1;
+ background-color: var(--color);
+ transition: 1s ease;
+}
+
+.button::before {
+ top: -1em;
+ left: -1em;
+}
+
+.button::after {
+ left: calc(100% + 1em);
+ top: calc(100% + 1em);
+}
+
+.button:hover::before, .button:hover::after {
+ height: 410px;
+ width: 410px;
+}
+
+.button:hover {
+ color: rgb(10, 25, 30);
+}
+
+.button:active {
+ filter: brightness(.8);
+}
+.about {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 19;
+
+}
+
+
+@keyframes sh02 {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+
+
+
+@keyframes colorChange {
+  0% {
+    color: hsl(230, 89%, 62%);
+  }
+  
+  20% {
+    color: hsl(230, 89%, 65%);
+  }
+  40% {
+    color: hsl(261, 73%, 60%);
+  }
+  60% {
+    color: hsl(261, 72%, 63%);
+  }
+
+  80% {
+    color: hsl(349, 70%, 56%);
+  }
+  100% {
+    color: hsl(230, 89%, 62%);
+  }
+}
+
+@media (max-width: 500px) {
+    .home button {
+        width: 90%;
+        
+    }
+    .home .button {
+      width: auto;
+    }
+    .home {
+      min-height: 600px;
+    }
+    .home h1 {
+        font-size: 3rem;
+    }
+    .home h2 {
+      font-size: 2.5rem;
+    }
+}
