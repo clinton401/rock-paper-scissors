@@ -68,6 +68,13 @@ function About({ active, setActive }) {
               >
                 FRONTEND MENTOR.
               </a>
+              <p>
+                Used{" "}
+                <a href="https://philip-droubi.github.io/Rock-Paper-Scissors/" target="blank">
+                  PHILLIP DROUBI
+                </a>
+                solution as an inspiration
+              </p>
             </p>
             <p> I dont have a portfolio yet but you can find me on: </p>
             <span className={acss.links}>
